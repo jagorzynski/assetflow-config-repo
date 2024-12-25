@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: assetflow-user-portfolio-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/assetflow-user-portfolio-db
+    username: sothrose
+    password: sothrose
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+#    baseline-on-migrate: true
