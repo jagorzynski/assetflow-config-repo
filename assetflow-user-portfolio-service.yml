@@ -1,6 +1,8 @@
 spring:
   application:
     name: assetflow-user-portfolio-service
+  server:
+    port: 8080
   datasource:
     url: jdbc:postgresql://localhost:5432/assetflow-user-portfolio-db
     username: sothrose
