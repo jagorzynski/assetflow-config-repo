@@ -1,8 +1,6 @@
 spring:
   application:
     name: assetflow-market-data-aggregator
-  server:
-    port: 8081
   data:
     mongodb:
       uri: ${SPRING_DATA_MONGODB_URI}
@@ -11,3 +9,5 @@ spring:
     host: ${SPRING_REDIS_HOST:localhost}
     port: ${SPRING_REDIS_PORT:6379}
     password: ${SPRING_REDIS_PASSWORD}
+server:
+  port: 8081
