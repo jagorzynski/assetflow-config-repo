@@ -3,9 +3,9 @@ spring:
     name: assetflow-market-data-aggregator
   data:
     mongodb:
-      uri: mongodb://sothrose:sothrose@localhost:27017/assetflow
+      uri: ${SPRING_DATA_MONGODB_URI}
       database: assetflow
   redis:
-    host: assetflow-redis
-    port: 6379
-    password:
+    host: ${SPRING_REDIS_HOST:localhost}
+    port: ${SPRING_REDIS_PORT:6379}
+    password: ${SPRING_REDIS_PASSWORD}
