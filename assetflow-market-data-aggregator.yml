@@ -6,6 +6,6 @@ spring:
       uri: mongodb://sothrose:sothrose@localhost:27017/assetflow
       database: assetflow
   redis:
-    host: localhost
+    host: assetflow-redis
     port: 6379
     password:
