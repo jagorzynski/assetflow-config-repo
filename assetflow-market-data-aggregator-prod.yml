@@ -11,3 +11,9 @@ spring:
     password: ${SPRING_REDIS_PASSWORD}
 server:
   port: 8081
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "env,configprops,health"
