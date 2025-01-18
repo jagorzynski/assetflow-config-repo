@@ -3,18 +3,18 @@ spring:
     name: assetflow-portfolio-service
   data:
     mongodb:
-      uri: mongodb://sothrose:sothrose@assetflow-portfolio-mongo:27017/portfolios
+      url: ${SPRING_DATA_MONGODB_URI:mongodb://sothrose:sothrose@assetflow-portfolio-mongo:27017/portfolios}
       database: portfolios
 server:
-  port: 8082
+  port: ${SERVER_PORT:8082}
 
 user-service:
-  base-url: "http://assetflow-user-service:8081"
+  base-url: ${USER_SERVICE_BASE_URL:http://assetflow-user-service:8081}
   user-by-id:
-    path: "/v1/assetflow/users/{userId}"
+    path: ${USER_SERVICE_USER_BY_ID_PATH:/v1/assetflow/users/{userId}}
 
 kafka:
-  bootstrap-servers: assetflow-kafka:9092
+  bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:assetflow-kafka:9092}
   topic:
     portfolio-updates: portfolio-updates
     trade-created: trade-created
@@ -33,7 +33,7 @@ kafka:
       max-attempts: 3
       backoff:
         delay: 2000
-    dead-letter-topic: trade-createdó-dlq
+    dead-letter-topic: trade-created-dlq
 
 resilience4j.circuitbreaker:
   instances:
