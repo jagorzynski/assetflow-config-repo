@@ -3,12 +3,12 @@ spring:
     name: assetflow-alert-service
   data:
     mongodb:
-      uri: mongodb://sothrose:sothrose@localhost:27019/alerts
+      uri: ${SPRING_DATA_MONGODB_URI:mongodb://sothrose:sothrose@assetflow-alert-mongo:27017/alerts}
       database: alerts
 server:
-  port: 8085
+  port: ${SERVER_PORT:8085}
 kafka:
-  bootstrap-servers: localhost:9092
+  bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:assetflow-kafka:9092}
   consumer:
     group-id: alert-service-group
     dlq-group-id: alert-service-dlq-group
