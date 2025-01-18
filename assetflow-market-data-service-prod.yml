@@ -2,10 +2,10 @@ spring:
   application:
     name: assetflow-market-data-service
 server:
-  port: 8083
+  port: ${SERVER_PORT:8083}
 
 coin-gecko:
-  url: "https://api.coingecko.com/api/v3"
+  url: ${COIN_GECKO_URL:https://api.coingecko.com/api/v3}
 
 resilience4j.circuitbreaker:
   instances:
