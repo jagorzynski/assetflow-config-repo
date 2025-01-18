@@ -3,18 +3,18 @@ spring:
     name: assetflow-portfolio-service
   data:
     mongodb:
-      uri: mongodb://sothrose:sothrose@localhost:27017/portfolios
+      uri: mongodb://sothrose:sothrose@assetflow-portfolio-mongo:27017/portfolios
       database: portfolios
 server:
   port: 8082
 
 user-service:
-  base-url: "http://localhost:8081"
+  base-url: "http://assetflow-user-service:8081"
   user-by-id:
     path: "/v1/assetflow/users/{userId}"
 
 kafka:
-  bootstrap-servers: localhost:9092
+  bootstrap-servers: assetflow-kafka:9092
   topic:
     portfolio-updates: portfolio-updates
     trade-created: trade-created
