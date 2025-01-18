@@ -2,9 +2,9 @@ spring:
   application:
     name: assetflow-user-service
   datasource:
-    url: jdbc:postgresql://assetflow-user-service-db:5432/assetflow-user-service-db
-    username: sothrose
-    password: sothrose
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://assetflow-user-service-db:5432/assetflow-user-service-db}
+    username: ${SPRING_DATASOURCE_USERNAME:sothrose}
+    password: ${SPRING_DATASOURCE_PASSWORD:sothrose}
     driver-class-name: org.postgresql.Driver
 server:
-  port: 8081
+  port: ${SERVER_PORT:8081}
