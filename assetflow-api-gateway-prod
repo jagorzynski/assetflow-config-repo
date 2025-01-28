@@ -54,8 +54,8 @@ spring:
         - name: SaveSession
   redis:
     connect-timeout: 2s
-    host: assetflow-api-gateway-redis
-    port: 6379
+    host: ${ASSETFLOW_API_GATEWAY_REDIS_HOST:assetflow-api-gateway-redis}
+    port: ${ASSETFLOW_API_GATEWAY_REDIS_PORT:6379}
     timeout: 1s
 
   session:
