@@ -76,3 +76,17 @@ resilience4j:
     configs:
       default:
         timeoutDuration: 5s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "gateway, health, routes"
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.http.server.reactive: DEBUG
+    io.github.resilience4j: DEBUG
